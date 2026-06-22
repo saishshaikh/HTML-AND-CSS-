@@ -238,10 +238,433 @@ Example:
 
 ---
 
-# Top 5 Most Asked HTML Interview Questions
+# CSS Interview Preparation Guide
 
-1. Difference between HTML and HTML5?
-2. What are semantic tags?
-3. Difference between id and class?
-4. What is DOM?
-5. Difference between localStorage, sessionStorage, and Cookies?
+## Top 20 CSS Interview Questions
+
+### 1. What is CSS?
+
+**Answer:**
+CSS (Cascading Style Sheets) is used to style and layout HTML elements on a webpage.
+
+---
+
+### 2. What are the Types of CSS?
+
+**Answer:**
+
+1. Inline CSS
+2. Internal CSS
+3. External CSS
+
+Example:
+
+```css
+h1{
+  color: blue;
+}
+```
+
+---
+
+### 3. What is the CSS Box Model?
+
+**Answer:**
+
+The Box Model consists of:
+
+```text
+Content → Padding → Border → Margin
+```
+
+* Content: Actual content of the element
+* Padding: Space inside the border
+* Border: Surrounds padding and content
+* Margin: Space outside the border
+
+---
+
+### 4. Difference Between Margin and Padding?
+
+| Margin                         | Padding                      |
+| ------------------------------ | ---------------------------- |
+| Outside the border             | Inside the border            |
+| Creates space between elements | Creates space around content |
+
+---
+
+### 5. What is CSS Specificity?
+
+**Answer:**
+Specificity determines which CSS rule is applied when multiple rules target the same element.
+
+Priority:
+
+```text
+Inline > ID > Class > Element
+```
+
+Example:
+
+```css
+#title{
+  color:red;
+}
+
+.title{
+  color:blue;
+}
+
+h1{
+  color:green;
+}
+```
+
+Result: Red
+
+---
+
+### 6. Difference Between id and class?
+
+| id                   | class                      |
+| -------------------- | -------------------------- |
+| Unique               | Reusable                   |
+| Used for one element | Used for multiple elements |
+| Selected using #     | Selected using .           |
+
+Example:
+
+```html
+<div id="header"></div>
+
+<div class="box"></div>
+<div class="box"></div>
+```
+
+---
+
+### 7. Difference Between Block, Inline and Inline-Block Elements?
+
+| Block             | Inline               | Inline-Block      |
+| ----------------- | -------------------- | ----------------- |
+| New line          | Same line            | Same line         |
+| Full width        | Required width only  | Width respected   |
+| Height/Width work | Height/Width ignored | Height/Width work |
+
+---
+
+### 8. Difference Between display:none and visibility:hidden?
+
+### display:none
+
+* Element removed from layout
+* Takes no space
+
+### visibility:hidden
+
+* Element hidden
+* Space remains reserved
+
+---
+
+### 9. Explain Positioning
+
+#### Relative
+
+```css
+position: relative;
+```
+
+Moves relative to its original position.
+
+#### Absolute
+
+```css
+position: absolute;
+```
+
+Moves relative to nearest positioned parent.
+
+#### Fixed
+
+```css
+position: fixed;
+```
+
+Stays fixed on screen during scrolling.
+
+#### Sticky
+
+```css
+position: sticky;
+top: 0;
+```
+
+Acts relative until a scroll threshold is reached.
+
+---
+
+### 10. Difference Between Relative and Absolute?
+
+| Relative                 | Absolute                              |
+| ------------------------ | ------------------------------------- |
+| Relative to itself       | Relative to nearest positioned parent |
+| Remains in document flow | Removed from normal flow              |
+
+---
+
+### 11. What is z-index?
+
+**Answer:**
+Controls stacking order of elements.
+
+```css
+.box{
+  z-index:10;
+}
+```
+
+Higher value appears on top.
+
+---
+
+### 12. What is Flexbox?
+
+**Answer:**
+Flexbox is a one-dimensional layout system used to align and distribute items efficiently.
+
+```css
+.container{
+  display:flex;
+}
+```
+
+---
+
+### 13. Difference Between justify-content and align-items?
+
+### justify-content
+
+Controls alignment along the main axis.
+
+```css
+justify-content:center;
+```
+
+### align-items
+
+Controls alignment along the cross axis.
+
+```css
+align-items:center;
+```
+
+---
+
+### 14. What is flex-direction?
+
+**Answer:**
+Determines the direction of flex items.
+
+```css
+flex-direction:row;
+flex-direction:column;
+```
+
+---
+
+### 15. What is flex-wrap?
+
+**Answer:**
+Allows items to move to the next line.
+
+```css
+flex-wrap:wrap;
+```
+
+---
+
+### 16. How Do You Center a Div?
+
+```css
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+```
+
+---
+
+### 17. Flexbox vs Grid?
+
+| Flexbox         | Grid             |
+| --------------- | ---------------- |
+| One-dimensional | Two-dimensional  |
+| Row OR Column   | Rows AND Columns |
+| Simpler layouts | Complex layouts  |
+
+---
+
+### 18. What are Media Queries?
+
+**Answer:**
+Media queries apply styles based on screen size.
+
+```css
+@media(max-width:768px){
+  body{
+    font-size:14px;
+  }
+}
+```
+
+---
+
+### 19. What is Responsive Design?
+
+**Answer:**
+Responsive design allows websites to adapt to different screen sizes and devices.
+
+---
+
+### 20. Difference Between em and rem?
+
+### em
+
+Relative to parent element.
+
+### rem
+
+Relative to root (`html`) element.
+
+---
+
+# Top CSS Coding Questions
+
+## 1. Center a Div
+
+```css
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+```
+
+---
+
+## 2. Create a Navbar
+
+### HTML
+
+```html
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+```
+
+### CSS
+
+```css
+nav{
+  display:flex;
+  gap:20px;
+}
+```
+
+---
+
+## 3. Two Column Layout
+
+```css
+.container{
+  display:flex;
+}
+
+.left,
+.right{
+  flex:1;
+}
+```
+
+---
+
+## 4. Three Column Layout
+
+```css
+.container{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+}
+```
+
+---
+
+## 5. Responsive Layout
+
+```css
+@media(max-width:768px){
+  .container{
+    flex-direction:column;
+  }
+}
+```
+
+---
+
+## 6. Fixed Navbar
+
+```css
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+}
+```
+
+---
+
+## 7. Card Hover Effect
+
+```css
+.card:hover{
+  transform:scale(1.05);
+}
+```
+
+---
+
+## 8. Center Text Inside Div
+
+```css
+.box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+```
+
+---
+
+# Most Important CSS Questions (Must Prepare)
+
+1. Box Model
+2. Margin vs Padding
+3. CSS Specificity
+4. Relative vs Absolute
+5. display:none vs visibility:hidden
+6. Flexbox
+7. justify-content vs align-items
+8. Flexbox vs Grid
+9. Media Queries
+10. em vs rem
+
+---
+
+
+
